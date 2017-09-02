@@ -3,10 +3,7 @@ $(document).ready(function(){
 var wins = 0;
 var losses = 0;
 var drEvilWants = "";
-var catWorth = 0;
-
-$('#winCount').text(wins);
-$('#lossCount').text(losses);
+var userScore = 0;
 
 //The random number shown at the start of the game should be between 19 - 120.
 //computer randomize Dr Evil wants
@@ -14,26 +11,90 @@ var drEvilRandomize = Math.floor(Math.random()*101+19)
 console.log(drEvilRandomize);
 $('#drEvilWants').text(drEvilRandomize);
 
+//Each cat should have a random hidden value between 1 - 12.
+var randomCat1= Math.floor(Math.random()*11+1)
+var randomCat2= Math.floor(Math.random()*11+1)
+var randomCat3= Math.floor(Math.random()*11+1)
+var randomCat4= Math.floor(Math.random()*11+1)
 
+function winPOP() {
+	alert("It's your lucky day! Dr Evil(& your cats) spare your life!");
+	wins ++;
+	$('#winCount').text(wins);
+	reset();
+}
 
-//how the game run
+function lossPOP() {
+	alert("Too many cats for Dr Evil. You are dead!");
+	losses ++;
+	$('#lossCount').text(losses);
+	reset();
+}
 
-//You will be given a random number at the start of the game.</p>
-//There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
-//You win the game by matching your total score to the random number. You lose the game if your total score goes above the random number. </p>
+function reset(){
+	userScore = 0;
+	randomCat1= Math.floor(Math.random()*11+1);
+	randomCat2= Math.floor(Math.random()*11+1);
+	randomCat3= Math.floor(Math.random()*11+1);
+	randomCat4= Math.floor(Math.random()*11+1);
+	$('#catWorth').text(userScore);
 
+	drEvilRandomize = Math.floor(Math.random()*101+19)
+	console.log(drEvilRandomize);
+	$('#drEvilWants').text(drEvilRandomize);
+}
 
+//creat value for each cat
+	$('#cat1').click(function(){
+	    userScore = userScore + randomCat1;
+	    console.log(userScore);
+	    $('#catWorth').text(userScore); 
 
-//rules
-//when drEvilWants === catWorth, wins ++
-//when catWorth > drEvilWants, losses ++
+	        if (userScore == drEvilRandomize){
+	          winPOP();
+	        }
+	        else if ( userScore > drEvilRandomize){
+	          lossPOP();
+	        }   
+	});
 
-//Each crystal should have a random hidden value between 1 - 12.
+	$('#cat2').click(function(){
+	    userScore = userScore + randomCat2;
+	    console.log(userScore);
+	    $('#catWorth').text(userScore); 
 
-//Each time the game starts, the game will change the values of each crystal.</p>
+	        if (userScore == drEvilRandomize){
+	          winPOP();
+	        }
+	        else if ( userScore > drEvilRandomize){
+	          lossPOP();
+	        }   
+	});
 
+	$('#cat3').click(function(){
+	    userScore = userScore + randomCat3;
+	    console.log(userScore);
+	    $('#catWorth').text(userScore); 
 
+	        if (userScore == drEvilRandomize){
+	          winPOP();
+	        }
+	        else if ( userScore > drEvilRandomize){
+	          lossPOP();
+	        }   
+	});
 
+	$('#cat4').click(function(){
+	    userScore = userScore + randomCat4;
+	    console.log(userScore);
+	    $('#catWorth').text(userScore); 
 
+	        if (userScore == drEvilRandomize){
+	          winPOP();
+	        }
+	        else if ( userScore > drEvilRandomize){
+	          lossPOP();
+	        }   
+	});
 
 });
