@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CatsCollector</title>
+
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <!--link to js-->
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body>
+	<h1>How worthy are your cats ?</h1>
+  <div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6"> 
+    <span class="glyphicon glyphicon-info-sign"> </span> <p>Dr. Evil asks you for money. You don't have any money but cats. Either you give him your cats or you die.</p>
+	<p> There are four famous cats below. Each cats worth some money. By clicking on each cat you will add a specific amount of money to current money you have now.</p>
+	<p> To not die, you will need to give him your cats and adds up to the price he wants. Once exceed the price, you die immediately because Dr. Evil wants the right amount of cats only.</p>
+	<p> Each time the game starts, the game will change the values of each cats.</p>
+	<span class="glyphicon glyphicon-info-sign"> </span>
+	</div>
+  <div class="col-md-3"></div>
+  
+</div>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-3" id="drEvilDiv"> 
+  	<img src="assets/images/drevil.jpeg" alt="Dr. Evil" style="width:100px;height:100px;">i want $<span id=drEvilWants></span>
+  </div>
+  <div class="col-md-2" id="scoreboard">
+	  	<p>wins: <span id="winCount"></span></p>
+	  	<p>losses: <span id="lossCount"></span> </p>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+
+<br><br>
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <button class="col-md-2" id="cat1">
+  	<img src="assets/images/cat_bub.jpg" alt="Lil Bub" style="width:200px;height:200px;">
+  </button>
+  <button class="col-md-2" id="cat2">
+  	<img src="assets/images/cat_colonel.jpg" alt="Colonel Meow" style="width:200px;height:200px;">
+  </button>
+  <button class="col-md-2" id="cat3">
+  	<img src="assets/images/cat_grumpy.jpg" alt="Grumpy Cat" style="width:200px;height:200px;">
+  </button>
+  <button class="col-md-2" id="cat4">
+  	<img src="assets/images/cat_hipster.jpg" alt="Hamilton the Hipster Cat" style="width:200px;height:200px;">
+  </button>
+  <div class="col-md-2"></div>
+</div>
+
+<h2 class="catDiv"> your cats made you this much so far $ <span id = "catWorth"> </span></h2>
